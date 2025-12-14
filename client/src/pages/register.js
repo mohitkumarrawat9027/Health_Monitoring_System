@@ -15,7 +15,7 @@ export default function Login() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5001/register', { email, password });
+      const res = await axios.post('https://health-monitoring-system-chi.vercel.app/register', { email, password });
       if (res.data.token) {
         login(res.data.token);
         signin(res.data.userId);

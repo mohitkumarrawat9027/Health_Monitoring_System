@@ -15,12 +15,14 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5001/login', { email, password });
-      if (res.data.token) {
+      const res = await axios.post('https://health-monitoring-system-chi.vercel.app/login', { email, password });
+      if (res && res.data && res.data.token) {
         login(res.data.token);
         signin(res.data.id);
         navigate('/home');
       }
+      else
+      alert("Some Error occured");
     } catch (err) {
       alert(err.response?.data?.message || err.message);
     }

@@ -23,7 +23,7 @@ export default function AddMember() {
 
     try {
       const res = await axios.post(
-        'http://localhost:5001/addmemberdata',
+        'https://health-monitoring-system-chi.vercel.app/addmemberdata',
         { name, age, gender, deviceId, parentid: userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

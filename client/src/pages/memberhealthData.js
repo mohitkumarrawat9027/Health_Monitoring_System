@@ -14,7 +14,7 @@ export default function HealthData() {
   // useCallback to stabilize fetchHealth reference
   const fetchHealth = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5001/healthdata', {
+      const res = await axios.get('https://health-monitoring-system-chi.vercel.app/healthdata', {
         params: { deviceId: member.deviceId },
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -7,20 +7,26 @@ const MONGOURI=process.env.MONGO_URI;
 const PORT=process.env.PORT || 5001;
 const app=express();
 
+
 app.use(cors({
-   origin: "http://localhost:3000",
+   origin: "https://health-monitoring-system-chi.vercel.app",
    credentials: true
  },{
    origin: "http://localhost:3000",
    credentials: true
  }));
+
+ const connect= async()=>{await mongoose.connect(mongoURI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));}
+
+  connect();
  
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(MONGOURI)
- .then(()=>console.log("mongodb connected"))
- .catch(err=>console.log(err.message));
 
+  
  app.use("/",require('./routes/user'));
  app.use("/",require('./routes/member'));
  app.use("/",require('./routes/healthdata'));

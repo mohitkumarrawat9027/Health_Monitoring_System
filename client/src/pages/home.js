@@ -16,7 +16,7 @@ export default function Home() {
 
   const deleteMember = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5001/deletememberdata/${id}`, {
+      const res = await axios.delete(`https://health-monitoring-system-chi.vercel.app/deletememberdata/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.member) {
@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/memberdata', {
+        const res = await axios.get('https://health-monitoring-system-chi.vercel.app/memberdata', {
           params: { parentid: userId },
           headers: { Authorization: `Bearer ${token}` },
         });
