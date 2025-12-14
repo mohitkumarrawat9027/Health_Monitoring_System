@@ -9,10 +9,7 @@ const app=express();
 
 
 app.use(cors({
-   origin: "https://health-monitoring-system-chi.vercel.app",
-   credentials: true
- },{
-   origin: "http://localhost:3000",
+   origin: "https://health-monitoringsystem.netlify.app",
    credentials: true
  }));
 
