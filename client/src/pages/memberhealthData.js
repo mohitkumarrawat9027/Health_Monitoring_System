@@ -14,6 +14,11 @@ export default function HealthData() {
   // useCallback to stabilize fetchHealth reference
   const fetchHealth = useCallback(async () => {
     try {
+      const heartbeat = Math.floor(Math.random() * (100 - 60 + 1)) + 60;
+      await axios.post('https://health-monitoring-system-chi.vercel.app/healthdata',{heartbeat:heartbeat},{
+        params: { deviceId: member.deviceId },
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const res = await axios.get('https://health-monitoring-system-chi.vercel.app/healthdata', {
         params: { deviceId: member.deviceId },
         headers: { Authorization: `Bearer ${token}` },
