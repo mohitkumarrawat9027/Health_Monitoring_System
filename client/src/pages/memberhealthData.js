@@ -32,7 +32,7 @@ export default function HealthData() {
 
   useEffect(() => {
     fetchHealth(); // initial fetch
-    const interval = setInterval(fetchHealth, 10000); // fetch every 10s
+    const interval = setInterval(fetchHealth, 5000); // fetch every 10s
     return () => clearInterval(interval);
   }, [fetchHealth]); // now safe, no linter warning
 
@@ -89,7 +89,7 @@ export default function HealthData() {
             </Card>
 
             {/* Blood Pressure */}
-            <Card className="border-0 shadow-sm mb-4">
+            {/* <Card className="border-0 shadow-sm mb-4">
               <Card.Body className="d-flex align-items-center justify-content-between">
                 <div>
                   <h6 className="mb-1 text-muted">Blood Pressure</h6>
@@ -99,7 +99,7 @@ export default function HealthData() {
                 </div>
                 <div style={{ fontSize: '28px' }}>🩺</div>
               </Card.Body>
-            </Card>
+            </Card> */}
 
             {/* Health Map */}
             <Card className="border-0 shadow-sm">
