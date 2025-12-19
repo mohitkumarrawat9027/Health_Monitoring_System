@@ -5,6 +5,8 @@ import App from './App';
 import { UserProvider } from './UserContext';
 import { AuthProvider } from './AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "leaflet/dist/leaflet.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
